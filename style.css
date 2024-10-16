@@ -103,7 +103,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding-left: 5vw;
+    padding-right: 5vw;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.2s linear;
 }
@@ -146,4 +147,53 @@ nav {
     text-decoration: none;
     color: #000;
     transition: color 0.2s linear;
+    padding: 0.4rem 1.5rem;
+}
+
+/* Tambahkan aturan baru ini */
+
+.nav-links ul li a:hover {
+    color: #007bff;
+}
+    
+.nav-links ul li a.active {
+    color: #007bff;
+    font-weight: 600;
+    background-color: #f1c40f;
+    border-radius: 3rem;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+}
+
+/* Responsif navbar untuk layar kecil */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+    }
+
+    .nav-links ul li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+
+main {
+    margin-top: 100px;
 }
