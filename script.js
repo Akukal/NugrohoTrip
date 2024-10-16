@@ -8,8 +8,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links ul li a');
 
+    function updateNavBackground() {
+        const navLinks = document.querySelector('.nav-links ul');
+        const activeLink = navLinks.querySelector('a.active');
+        
+        if (activeLink) {
+            const linkRect = activeLink.getBoundingClientRect();
+            const navRect = navLinks.getBoundingClientRect();
+            
+            navLinks.style.setProperty('--left', `${linkRect.left - navRect.left}px`);
+            navLinks.style.setProperty('--width', `${linkRect.width}px`);
+        }
+    }
+
     function updateActiveNavLink() {
-        const scrollPosition = window.pageYOffset + 101; // Tambahkan 100px ke posisi scroll
+        const scrollPosition = window.pageYOffset + 101;
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -26,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
+
+        updateNavBackground(); // Tambahkan ini
     }
 
     function smoothScroll(e) {
@@ -49,4 +64,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Panggil fungsi saat halaman dimuat untuk mengatur status awal
     updateActiveNavLink();
+
+    // Panggil updateNavBackground saat halaman dimuat
+    updateNavBackground();
+
+    // Tambahkan event listener untuk resize
+    window.addEventListener('resize', updateNavBackground);
 });

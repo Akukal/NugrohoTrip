@@ -141,33 +141,41 @@ nav {
     margin: 0;
     display: flex;
     gap: 1rem;
+    position: relative; /* Tambahkan ini */
+}
+
+.nav-links ul::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: var(--left, 0);
+    height: 150%;
+    width: var(--width, 0);
+    background-color: #f1c40f;
+    border-radius: 3rem;
+    z-index: -1;
+    transition: all 0.3s ease; /* Tambahkan transisi */
 }
 
 .nav-links ul li a {
     text-decoration: none;
     color: #000;
-    transition: color 0.2s linear;
+    transition: color 0.5s linear;
     padding: 0.4rem 1.5rem;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: color 0.5s linear;
+    -moz-transition: color 0.5s linear;
+    -ms-transition: color 0.5s linear;
+    -o-transition: color 0.5s linear;
 }
 
-/* Tambahkan aturan baru ini */
-
-.nav-links ul li a:hover {
-    color: #007bff;
-}
-    
 .nav-links ul li a.active {
     color: #007bff;
     font-weight: 600;
-    background-color: #f1c40f;
-    border-radius: 3rem;
-    -webkit-border-radius: 3rem;
-    -moz-border-radius: 3rem;
-    -ms-border-radius: 3rem;
-    -o-border-radius: 3rem;
 }
 
-/* Responsif navbar untuk layar kecil */
+/*Responsive*/
 @media screen and (max-width: 768px) {
     .nav-links {
         display: none;
@@ -196,4 +204,6 @@ nav {
 
 main {
     margin-top: 100px;
+    margin-left: 75px;
+    margin-right: 75px;
 }
