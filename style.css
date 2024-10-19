@@ -6,8 +6,8 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #fff;
-    color: #000;
+    background-color: #F9F7E4;
+    color: #122D4F;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,19 +20,19 @@ body {
 
 /* Toggle Dark Mode */
 body.dark {
-    background-color: #292c35;
-    color: #fff;
+    background-color: #122D4F;
+    color: #F9F7E4;
 }
 
 body.dark h1,
 body.dark p,
 body.dark a,
 body.dark .support a {
-    color: #fff;
+    color: #F9F7E4;
 }
 
 body.dark header {
-    background-color: #1a1a1a;
+    background-color: #122D4F;
 }
 
 body.dark nav {
@@ -40,11 +40,19 @@ body.dark nav {
 }
 
 body.dark .logo p {
-    color: #fff;
+    color: #F9F7E4;
 }
 
 body.dark .nav-links ul li a {
-    color: #fff;
+    color: #F9F7E4;
+}
+
+body.dark .nav-links ul::before {
+    background-color: #F9F7E4;
+}
+
+body.dark .nav-links ul li a.active {
+    color: #122D4F;
 }
 
 .checkbox {
@@ -74,7 +82,7 @@ body.dark .nav-links ul li a {
 }
 
 .checkbox-label .ball {
-    background-color: #fff;
+    background-color: #F9F7E4;
     width: 22px;
     height: 22px;
     position: absolute;
@@ -93,7 +101,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: #F9F7E4;
     z-index: 1000;
     transition: background-color 0.2s linear;
 }
@@ -130,7 +138,7 @@ nav {
     margin-left: 0.5rem;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #000;
+    color: #122D4F;
     transition: color 0.2s linear;
 }
 
@@ -151,15 +159,15 @@ nav {
     left: var(--left, 0);
     height: 150%;
     width: var(--width, 0);
-    background-color: #f1c40f;
+    background-color: #122D4F;
     border-radius: 3rem;
     z-index: -1;
-    transition: all 0.3s ease; /* Tambahkan transisi */
+    transition: all 0.3s ease, background-color 0.2s linear; /* Tambahkan transisi untuk background-color */
 }
 
 .nav-links ul li a {
     text-decoration: none;
-    color: #000;
+    color: #122D4F;
     transition: color 0.5s linear;
     padding: 0.4rem 1.5rem;
     position: relative;
@@ -171,7 +179,7 @@ nav {
 }
 
 .nav-links ul li a.active {
-    color: #007bff;
+    color: #F9F7E4;
     font-weight: 600;
 }
 
